@@ -1,7 +1,5 @@
 const puppeteer = require('puppeteer');
 
-
-
 async function initBrowser() {
     const client = await page.target().createCDPSession();
     const all_browser_cookies = (await client.send('Network.getAllCookies')).cookies;
@@ -40,11 +38,5 @@ async function checkout(page) {
     const page2 = await initBrowser();
     await addToCart(page)
 }
-
-
-
-
-
-
 
 checkout()
